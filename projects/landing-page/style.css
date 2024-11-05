@@ -1,0 +1,158 @@
+/* Global */
+body{
+    font-family: "Roboto";
+    background-color: white;
+    color: #F9FAF8;
+    margin: 0;
+}
+
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container-row {
+    display: flex;
+}
+
+.align-cross-center {
+    align-items: center;
+}
+
+.align-main-center {
+    justify-content: center;
+}
+
+/* Sections */
+.header {
+    background-color: #1F2937;
+    box-sizing: content-box;
+    justify-content: space-between;
+    padding: 12px 180px;
+}
+
+.header .logo {
+    font-size: 24px;
+}
+
+.hero, .header a {
+    background-color: #1F2937;
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+.hero{
+    padding: 60px 180px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.hero-text {
+    flex-basis: 40%;
+    gap: 16px;
+}
+
+.maintext{
+    font-size: 48px;
+    font-weight: 900;
+    color: #F9FAF8;
+}
+
+.hero img {
+    width: 400px;
+    height: 200px;
+}
+
+.info {
+    margin: 40px;
+    color: #1F2937;
+}
+
+.info-header {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+
+.card {
+    width: 180px;
+    margin: 20px;
+    text-align: center;
+}
+
+.card > img {
+    width: 180px;
+    height: 180px;    
+}
+
+.quote {
+    box-sizing: content-box;
+    padding: 100px 300px;
+    background-color: #E5E7EB;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: lighter;
+    color: #1F2937;
+}
+
+.quote div:last-child {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0 10% 0 0;
+    float: right;
+}
+
+.call {
+    margin: 90px 220px;
+    padding: 50px 120px;
+    background-color: #3882F6;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.footer {
+    background-color: #1F2937;
+    padding: 36px 0;
+}
+
+/* Elements */
+button {
+    background: #3882F6;
+    width: 110px;
+    height: 35px;
+    align-items: center;
+    border-radius: 8px;
+    color: #E5E7EB;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.call-text div:nth-child(1) {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.call button {
+    align-self: center;
+    border: 2px solid #E5E7EB;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    gap: 14px;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
