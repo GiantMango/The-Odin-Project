@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Dispatch Event</title>
+    </head>
+
+    <body>
+        <input type="text" placeholder="Type some text"></input>
+        <button id="sendButton">Send!</button>
+
+        <script>
+            let inputText = document.querySelector('input');
+            let sendButton = document.querySelector('#sendButton');
+            inputText.value = "Here's the default value"
+
+            sendButton.addEventListener('click', function () {
+                    alert(inputText.value)
+            });
+
+            // Generate event from code!
+            let clickEvent = new Event('click');
+            sendButton.dispatchEvent(clickEvent);
+        </script>
+    </body>
+</html>
+
