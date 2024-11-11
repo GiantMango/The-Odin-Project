@@ -8,7 +8,9 @@ body {
     text-align: center;
     display: flex;
     gap: 20px;
-    margin: 2%;
+    margin: 5vh 5vw;
+    height: 90vh;
+    width: 90vw;
 }
 
 .flex-column {
@@ -66,11 +68,13 @@ img {
 }
 
 .img-wrap {
-    height: 80%;
-    width: 80%;
+    box-sizing: border-box;
+    height: 320px;
+    width: 240px;
     display: block;
     border: 2px solid #3b3a37;
     border-radius: 15px;
+    padding: 20px;
 }
 
 button {
