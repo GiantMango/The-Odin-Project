@@ -3,14 +3,36 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>The Odin Project | Rock Paper Scissors</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body class="flex-column">
+        <div class="header">Let's Play Rock, Paper, Scissors!</div>
+        <div class="container buttons">
+            <button class="selection" id="rock">Rock</button>
+            <button class="selection" id="paper">Paper</button>
+            <button class="selection" id="scissors">Scissors</button>
+        </div>
+        <div class="container display">
+            <div class="human flex-column">
+                <div class="img-wrap"><img src=""></div>
+                <div class="text-box">You</div>
+            </div>
+            <div class="computer flex-column">
+                <div class="img-wrap"><img src=""></div>
+                <div class="text-box">COM</div>
+            </div>
+        </div>
+        <div class="container text-box flex-column">
+            <div class="result">Press one of the button to start!</div>
+            <div class="score">
+                <div>Your Score: <span id="you-score">0</span></div>
+                <div>COM Score: <span id="com-score">0</span></div>
+            </div>
+        </div>
         
-        
+        <script src="script.js" async defer></script>
     </body>
 </html>
