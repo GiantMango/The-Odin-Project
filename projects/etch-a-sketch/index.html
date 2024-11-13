@@ -6,14 +6,19 @@
         <title>The Odin Project | Etch-a-Sketch</title>
         <meta name="description" content="Etch-a-Sketch is one of the projects from The Odin Project Foundation curriculum.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="script.css">
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body class="flex-column">
+        <div class="header">Etch-a-Sketch x GiantMango</div>
         <div class="canvas flex-column">
-            <div class="row flex-row">
-                <div class="cell"></div>
-            </div>
-        </div>        
-        <script src="" async defer></script>
+        </div>
+        <div class="grid-setter">
+            <input type="number" id="grid-size">
+            <button type="submit" id="change-grid">Enter</button>
+            <button type="submit" id="clear-canvas">Clear</button> 
+            <button type="submit" id="random-mode">Random Mode</button>
+            <button type="submit" id="scale-mode">Scale Mode</button>
+        </div>
+        <script src="script.js" async defer></script>
     </body>
 </html>

@@ -1,3 +1,14 @@
+body {
+    border: 1px solid black;
+    background-color: antiquewhite;
+    height: 90vh;
+    width: 90vw;
+    margin: 5vh 5vw;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 6vh;
+}
+
 .flex-row {
     display: flex;
     justify-content: center;
@@ -6,7 +17,37 @@
 
 .flex-column {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+
+.header {
+    margin: 2vh auto;
+    flex: 1;
+}
+
+.canvas {
+    border: 4px solid black;
+    aspect-ratio: 1;
+    height: 85%;
+}
+
+
+.row {
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+}
+
+.cell {
+    box-sizing: border-box;
+    aspect-ratio: 1;
+    height: 100%;
+    outline: 1px solid grey;
+}
+/* 
+.cell:hover {
+    background-color: black;
+} */
