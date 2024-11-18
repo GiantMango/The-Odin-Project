@@ -1,5 +1,7 @@
 const calculatorCanvas = document.querySelector(".calculator");
-const displayScreen = document.querySelector(".display-screen");
+// const displayScreen = document.querySelector(".display-screen");
+const curCalcDisplay = document.querySelector("#cur-calc");
+const prevCalcDisplay = document.querySelector("#prev-calc");
 const buttonCanvas = document.querySelector(".button-canvas");
 const accessoryText = ['AC', '+/-', '%'];
 const accessoryID = ['clear-all', 'is-neg', 'percent'];
@@ -109,12 +111,13 @@ buttons.forEach((e) => {
             bText = '';
             op = null;
             
+            prevCalcDisplay.textContent = equation;
             equation = a;
-            displayScreen.textContent = a;
+            curCalcDisplay.textContent = a;
             
         } else {
             equation += e.target.textContent;
-            displayScreen.textContent = equation;
+            curCalcDisplay.textContent = equation;
         }
 
         if ('clear-all' == e.target.getAttribute("id")) {
@@ -141,7 +144,8 @@ function operate(op, a, b) {
 
 
 function clearDisplay() {
-    displayScreen.innerHTML = ''
+    curCalcDisplay.innerHTML = ''
+    prevCalcDisplay.innerHTML = ''
     answer = 0;
     a = null;
     aText = '';
@@ -151,20 +155,3 @@ function clearDisplay() {
     opCount = 0;
     equation = ''
 }
-
-
-// function add(a, b) {
-//     return a + b;
-// }
-
-// function subtract(a, b) {
-//     return a - b;
-// }
-
-// function multiply(a, b) {
-//     return a * b;
-// }
-
-// function divide(a, b) {
-//     return a / b;
-// }
