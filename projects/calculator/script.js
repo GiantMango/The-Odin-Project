@@ -95,9 +95,7 @@ buttons.forEach((e) => {
                 op = e.target.getAttribute("id");
                 opCount = 1;
             }
-        }
-
-        if (opCount == 1) {
+        } else if (opCount == 1) {
             a = operate(op, a, b);
             b = null;
             bText = '';
@@ -136,6 +134,7 @@ function operate(op, a, b) {
         case 'subtract':
             return a - b;
         case 'multiply':
+            console.log("multiply: ", a, b)
             return a * b;
         case 'divide':
             return a / b;
