@@ -25,6 +25,7 @@ const rowNum = 5;
 const padNum = 4;
 const opRegex = /[÷x\+\-]/g;
 const priOpRegex = /[÷x]/g;
+const decimalLimit = 10000000;
 var eqPointer = 0;
 var eqStack = [[], [], []];
 var answer = [];
@@ -97,24 +98,30 @@ function appendToDisplay(s) {
 }
 
 function calculate() {
-  // console.log("CALCULATE()");
-  // console.log("eqStack: ", eqStack);
   let eqStackFlat = eqStack.map((e) => e.join(""));
-  // console.log("flat join eqStack: ", eqStackFlat);
-
+  let percentageIndex = eqStackFlat.map((e) => e.includes("%"));
+  console.log(percentageIndex);
   let isEmpty = eqStackFlat.reduce((acc, cur) => {
     return acc || cur == "";
   }, false);
 
   if (isEmpty) {
-    answer = parseFloat(eqStackFlat[0]);
+    answer = percentageIndex[0]
+      ? parseFloat(eqStackFlat[0]) / 100
+      : parseFloat(eqStackFlat[0]);
   } else {
     answer = operate(
       eqStackFlat[1],
-      parseFloat(eqStackFlat[0]),
-      parseFloat(eqStackFlat[2])
+      percentageIndex[0]
+        ? parseFloat(eqStackFlat[0]) / 100
+        : parseFloat(eqStackFlat[0]),
+      percentageIndex[2]
+        ? parseFloat(eqStackFlat[2]) / 100
+        : parseFloat(eqStackFlat[2])
     );
   }
+
+  answer = Math.round(answer * decimalLimit) / decimalLimit;
 
   topCalcDisplay.textContent = eqStackFlat.join("");
   botCalcDisplay.textContent = answer;
@@ -128,6 +135,11 @@ function formatEqStack(s) {
     // num 1
     case 0:
       // console.log("IN CASE 0");
+      if (answer.length != 0 && digitsText.includes(s)) {
+        answer = [];
+        eqStack[0] = [s];
+      }
+
       if (eqStack[0].length == 1 && operatorsText.includes(s) && s != "-") {
         // console.log("IN CASE 0, FIRST IF");
         eqStack[0].pop();
@@ -143,9 +155,6 @@ function formatEqStack(s) {
       ) {
         // console.log("IN CASE 0, SECOND ELSE");
         eqStack[0].pop();
-      } else if (eqStack[0][eqStack[0].length - 1] == "%") {
-        console.log("in percentage");
-        eqPointer += 1;
       }
 
       if (
@@ -207,8 +216,8 @@ function formatEqStack(s) {
       }
       break;
   }
-  // console.log("eqPointer: ", eqPointer);
-  // console.log("eqStack: ", eqStack);
+  console.log("eqPointer: ", eqPointer);
+  console.log("eqStack: ", eqStack);
 }
 
 function equal() {
@@ -238,7 +247,8 @@ function operate(op, a, b) {
       return a * b;
     case "÷":
       if (b == 0) {
-        throw new Error("Can't divided by 0");
+        botCalcDisplay.textContent = "Can't divide by 0";
+        throw new Error("Can't divide by 0");
       } else {
         return a / b;
       }

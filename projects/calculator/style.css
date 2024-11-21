@@ -2,6 +2,7 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   overflow: hidden;
+  background-color: #dad6d6;
 }
 
 .flex-column {
@@ -20,23 +21,23 @@ body {
 .calculator {
   min-width: 300px;
   min-height: 500px;
-  border: 3px solid black;
+  border: 3px solid #03120e;
   border-radius: 4% / 3%;
   aspect-ratio: 3/4;
   height: 80vh;
   margin: 5vh auto;
   padding: 2% 0;
   gap: 3%;
-  background-color: darkslateblue;
+  background-color: #40798c;
 }
 
 .display-screen {
   flex: 1;
-  border: 3px solid black;
+  border: 3px solid #03120e;
   border-radius: 5px;
   height: 100%;
   width: 85%;
-  background-color: beige;
+  background-color: #cfe0c3;
 }
 
 .display-screen > div {
@@ -93,9 +94,9 @@ body {
 
 button {
   flex: 1;
-  background-color: #92908a;
+  background-color: #a2a09a;
   display: block;
-  border: 3px solid black;
+  border: 3px solid #03120e;
   border-radius: 100%;
   aspect-ratio: 1;
   width: 100%;
